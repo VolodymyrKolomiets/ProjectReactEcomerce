@@ -1,29 +1,24 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect} from 'react'
+import { GlobalContext } from '../../context/GlobalState'
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
+const {getAllProducts, products} =useContext(GlobalContext)
+    
+
     useEffect(() => {
-        const getAllProducts = async () => {
-            try {
-                const res = await axios.get('http://localhost:8080/products/getAll')
-                setProducts(res.data.products)
-                console.log('res', res.data.products)
-            } catch (error) {
-                console.error(error)
-            }
-        }
         getAllProducts()
     }, [])
 
     return (
-        <div>{products.map( (product) => {
-            return(
+        <div>
+            {products.map((product) => {
+            return (
                 <div key={product.id}>
-                        <img src="{product.image}" alt="imagen" />
+                    <img src={product.image} alt="imagen" />
                     <div>
                         <h4>{product.name}</h4>
-                        {/* <p>{product.description}</p> */}
+                        
+                        <p>{product.description}</p>
                         <span>{product.price}</span>
                         <span>{product.Category.category}</span>
                     </div>

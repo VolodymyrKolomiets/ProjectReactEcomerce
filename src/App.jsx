@@ -1,12 +1,14 @@
 import './App.css'
 import Products from './components/Products/Products'
+import GlobalProvider from './context/GlobalState'
 //import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-
   return (
     <>
+    <GlobalProvider>
     <Products/>
+    </GlobalProvider>
       {/* <Header />
       <BrowserRouter>
         <Routes>
