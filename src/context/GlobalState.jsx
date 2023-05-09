@@ -16,7 +16,7 @@ export const GlobalProvider = ({ children }) => {
             const res = await axios.get('http://localhost:8080/products/getAll')
             dispatch({
                 type: "GET_PRODUCTS",
-                payload: res.data.results
+                payload: res.data.products
             })
         } catch (error) {
             console.error(error)
