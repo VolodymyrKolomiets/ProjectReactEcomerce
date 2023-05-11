@@ -6,6 +6,8 @@ const initialState = {
     products: []
 };
 
+const API_URL = "http://localhost:8080";
+
 export const ProductContext = createContext(initialState);
 
 export const ProductProvider = ({ children }) => {
@@ -13,7 +15,7 @@ export const ProductProvider = ({ children }) => {
 
     const getAllProducts = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/products/getAll')
+            const res = await axios.get(API_URL + "/products/getAll")
             dispatch({
                 type: "GET_PRODUCTS",
                 payload: res.data.products
