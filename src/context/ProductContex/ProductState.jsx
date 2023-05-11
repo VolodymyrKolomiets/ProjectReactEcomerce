@@ -1,15 +1,15 @@
 import React, { createContext, useReducer } from 'react';
-import AppReducer from './AppReducer'
+import ProductReducer from './ProductReducer'
 import axios from 'axios';
 
 const initialState = {
     products: []
 };
 
-export const GlobalContext = createContext(initialState);
+export const ProductContext = createContext(initialState);
 
-export const GlobalProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(AppReducer, initialState);
+export const ProductProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(ProductReducer, initialState);
 
     const getAllProducts = async () => {
         try {
@@ -23,16 +23,16 @@ export const GlobalProvider = ({ children }) => {
         }
     };
     return (
-        <GlobalContext.Provider
+        <ProductContext.Provider
             value={{
                 products: state.products,
                 getAllProducts
             }}
         >
             {children}
-        </GlobalContext.Provider>
+        </ProductContext.Provider>
     );
 };
 
 
-export default GlobalProvider
+export default ProductProvider

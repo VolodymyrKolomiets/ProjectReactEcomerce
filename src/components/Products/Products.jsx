@@ -1,8 +1,8 @@
 import React, { useContext, useEffect} from 'react'
-import { GlobalContext } from '../../context/GlobalState'
+import { ProductContext } from '../../context/ProductContex/ProductState'
 
 const Products = () => {
-const {getAllProducts, products} =useContext(GlobalContext)
+const {getAllProducts, products} =useContext(ProductContext)
     
 
     useEffect(() => {

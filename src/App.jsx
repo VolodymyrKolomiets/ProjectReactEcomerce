@@ -1,19 +1,21 @@
-import './App.css'
+import './App.scss'
 import Products from './components/Products/Products'
-import GlobalProvider from './context/GlobalState'
+import ProductProvider from './context/ProductContex/ProductState'
 //import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-    <GlobalProvider>
+    <ProductProvider>
     <Products/>
-    </GlobalProvider>
+    </ProductProvider>
       {/* <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/user" element={<UserForm />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profil" element={<Perfil />} />
         </Routes>
       </BrowserRouter> */}
     </>
