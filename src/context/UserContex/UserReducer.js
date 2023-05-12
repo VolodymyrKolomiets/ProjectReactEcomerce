@@ -4,6 +4,7 @@ const users = (state, action) => {
         return {
           ...state,
           token: action.payload.token,
+          message: action.payload.msg
         };
       default:
         return state;

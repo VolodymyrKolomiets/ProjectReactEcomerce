@@ -1,14 +1,30 @@
-import React, { useContext } from 'react'
-import { Button, Form, Input } from 'antd';
+import React, { useContext, useEffect } from 'react'
+import { Button, Form, Input, notification } from 'antd';
 import { UserContext } from '../../context/UserContex/UserState';
+import { useNavigate } from "react-router-dom";
+
 
 
 const Login = () => {
-    const { login } = useContext(UserContext)
+    const { login, message, token } = useContext(UserContext)
+    const navigate = useNavigate();
 
     const onFinish = (values) => {
         login(values)
     };
+
+    useEffect(() => {
+        if (token) {
+            setTimeout(() => {
+                navigate("/products");
+            }, 2000);
+        }
+        if (message) {
+          notification.success({
+            message: message,
+          });
+        }
+      }, [token]);
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
@@ -59,8 +75,6 @@ const Login = () => {
                 >
                     <Input.Password />
                 </Form.Item>
-
-
 
                 <Form.Item
                     wrapperCol={{
