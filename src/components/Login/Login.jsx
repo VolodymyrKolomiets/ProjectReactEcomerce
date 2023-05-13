@@ -16,7 +16,7 @@ const Login = () => {
     useEffect(() => {
         if (token) {
             setTimeout(() => {
-                navigate("/products");
+                navigate("/profile");
             }, 2000);
         }
         if (message) {
