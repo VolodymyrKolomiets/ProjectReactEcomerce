@@ -29,6 +29,17 @@ export const UserProvider = ({ children }) => {
             localStorage.setItem("token", JSON.stringify(res.data.token));
         }
     };
+    const register = async (user) => {
+        const res = await axios.post(API_URL + "/users/createUser");
+        dispatch({
+            type: "REGISTER",
+            payload: res.data,
+        });
+
+        if (res.data) {
+            localStorage.setItem("token", JSON.stringify(res.data.token));
+        }
+    };
     
     const getUserInfo= async()=>{
       const token = JSON.parse(localStorage.getItem("token"))
@@ -67,7 +78,8 @@ export const UserProvider = ({ children }) => {
             logoutMesage: state.logoutMesage,
             login,
             getUserInfo,
-            logout
+            logout,
+            register
           }}
         >
           {children}

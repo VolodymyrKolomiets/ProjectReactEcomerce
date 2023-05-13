@@ -31,6 +31,8 @@ function Header() {
        
         {/* <Link to="/">Home</Link> */}
         <Link to="/products">Product</Link>
+        <Link to="/register">Register</Link>
+        {/* {token ? (<>(<Link to="/profile"> <Avatar icon={<UserOutlined />} /></Link> ):(<Link to="/register">Register</Link>)</>) */}
           
         </nav>
         </div>
