@@ -1,19 +1,37 @@
-import React, { useContext } from 'react'
-import { Link } from "react-router-dom";
-import { UserContext } from '../../context/UserContex/UserState';
+import React, { useContext, useEffect } from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import './Header.scss'
+import { UserContext } from '../../context/UserContext/UserState';
+import { Avatar, notification, Badge } from "antd";
+import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+
+
 function Header() {
-  const {token} = useContext(UserContext)
+    const {token, logout} = useContext(UserContext)
+    const navigate = useNavigate()
+    useEffect(()=> {
+        if(!token){
+            navigate("/login")
+            notification.success({
+                message:"Logout successesful"
+            })
+        }
+    },[token])
   return (
     <>
       <header>
         <div className='navContainer'> 
         <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li></li>
-          </ul>
+           
+        {token ? ( <>
+        <Link to="/profile"> <Avatar icon={<UserOutlined />} /></Link> 
+        <span  onClick={()=> logout}>Login</span>
+        </>) : (
+        <Link to = "/login">Login</Link>)}
+       
+        {/* <Link to="/">Home</Link> */}
+        <Link to="/products">Product</Link>
+          
         </nav>
         </div>
       </header>

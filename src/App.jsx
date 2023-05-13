@@ -4,7 +4,7 @@ import Login from './components/Login/Login'
 import Products from './components/Products/Products'
 import Profile from './components/Profile/Profile'
 import { ProductProvider } from './context/ProductContex/ProductState'
-import { UserProvider } from './context/UserContex/UserState'
+import { UserProvider } from './context/UserContext/UserState'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {

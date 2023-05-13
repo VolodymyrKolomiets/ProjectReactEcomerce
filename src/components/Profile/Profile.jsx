@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { UserContext } from '../../context/UserContex/UserState'
+import { UserContext } from '../../context/UserContext/UserState'
 import { Card, Spin, Collapse } from "antd";
 
 const Profile = () => {

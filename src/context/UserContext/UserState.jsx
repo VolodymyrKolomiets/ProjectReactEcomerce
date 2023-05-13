@@ -64,6 +64,7 @@ export const UserProvider = ({ children }) => {
             token: state.token,
             user: state.user,
             message: state.message,
+            logoutMesage: state.logoutMesage,
             login,
             getUserInfo,
             logout
