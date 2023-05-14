@@ -1,14 +1,19 @@
 header {
-    background: rgba(0,0,0,0.7);
+    background: rgba(85, 82, 82, 0.7);
     width: 100%;
     display: flex;
     justify-content: center;
   }
-  
-  nav {
-    float: left;
+.navContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  div{
+    display: flex;
+    gap: 10px;
   }
-
+}  
 
 a{
     all:unset;
