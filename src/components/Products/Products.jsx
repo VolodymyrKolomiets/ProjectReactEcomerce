@@ -1,6 +1,6 @@
 import React, { useContext, useEffect} from 'react'
 import { ProductContext } from '../../context/ProductContex/ProductState'
-
+import './Products.scss'
 const Products = () => {
 const {getAllProducts, products, addCart} =useContext(ProductContext)
     
@@ -11,7 +11,7 @@ const {getAllProducts, products, addCart} =useContext(ProductContext)
 
     const productsInfo = products.map((product) => {
         return (
-            <div key={product.id}>
+            <div key={product.id} className="product">
                 {/* <img src="https://www.pexels.com/photo/opened-book-on-tree-root-3358707/" alt="imagen" /> */}
                 <img src={product.image} alt="imagen" />
                 <div>
@@ -26,7 +26,7 @@ const {getAllProducts, products, addCart} =useContext(ProductContext)
     })
 
     return (
-        <div>
+        <div className='products-container'>
             {productsInfo}
         </div>
     )

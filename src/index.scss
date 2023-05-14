@@ -1,11 +1,18 @@
+$font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+$font-color:rgba(17, 18, 18, 0.87);
+$backgroun-color-principal:#f7f0f0;
+$backgroun-color-header:#eae2a6;
+$btn-color: #4accda;
+$hoover-btn-color:#e6ce16;
+$border-btn: solid 1px black;
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: $font-family;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #777272;
+  color: $font-color;
+  // background-color: #777272;
 
   /* font-synthesis: none; */
   text-rendering: optimizeLegibility;
@@ -13,4 +20,3 @@
   -moz-osx-font-smoothing: grayscale;
   /* -webkit-text-size-adjust: 100%; */
 }
-

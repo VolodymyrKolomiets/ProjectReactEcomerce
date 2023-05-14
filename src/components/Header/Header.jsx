@@ -36,11 +36,11 @@ function Header() {
   return (
     <>
       <header>
-        <div className='navContainer'>
+        <div className='nav-container'>
           <h3>Header</h3>
           <nav>
 
-            {token ? (<div>
+            {token ? (<div className='div-navbar'>
               <Link to="/profile"> <Avatar icon={<UserOutlined />} /></Link>
               <Link to="/products">Product</Link>
               <Link to="/cart">

@@ -1,0 +1,36 @@
+@import "../../index.scss";
+
+.cart-btn {
+    all: unset;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: $btn-color;
+    border: $border-btn
+}
+
+.cart-btn:hover {
+    transform: scale(1.1);
+    background-color: $hoover-btn-color;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-container-product {
+    width: 100%;
+    max-width: 25%;
+    border: double 2px black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
