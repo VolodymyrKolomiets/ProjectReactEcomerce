@@ -8,7 +8,8 @@ const token = JSON.parse(localStorage.getItem("token"));
 const initialState = {
     token: token ? token : null,
     user: null,
-    message:""
+    message:"",
+    logoutmessage:""
 };
 
 const API_URL = "http://localhost:8080";
@@ -76,7 +77,7 @@ export const UserProvider = ({ children }) => {
             token: state.token,
             user: state.user,
             message: state.message,
-            logoutMesage: state.logoutMesage,
+            logoutMessage: state.logoutMessage,
             login,
             getUserInfo,
             logout,

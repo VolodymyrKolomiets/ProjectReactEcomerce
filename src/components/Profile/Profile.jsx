@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
-import { Card, Spin } from "antd";
+import { Card, Spin, Collapse } from "antd";
 
 const Profile = () => {
+  const { Panel } = Collapse
   const { getUserInfo,user } = useContext(UserContext);
   useEffect(() => {
     getUserInfo();
@@ -24,9 +25,13 @@ const Profile = () => {
       <p>Name: {user.name}</p>
       <p>Surname: {user.surname}</p>
       <p>Email: {user.email}</p>
-
     </Card>
-
+    <h3>Orders</h3>
+    <Collapse defaultActiveKey={['1']} >
+      <Panel header="This is panel header 1" key="1">
+        <p>{}</p>
+      </Panel>
+    </Collapse>
   </div>;
 };
 

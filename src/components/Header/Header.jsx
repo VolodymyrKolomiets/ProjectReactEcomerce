@@ -8,18 +8,18 @@ import { ProductContext } from '../../context/ProductContex/ProductState';
 
 
 function Header() {
-  const { token, logout } = useContext(UserContext)
+  const { token, logout, logoutMessage } = useContext(UserContext)
   const { cart } = useContext(ProductContext)
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!token) {
+    if (logoutMessage) {
       navigate("/login")
       notification.success({
-        message: "Logout successesful"
+        message: logoutMessage
       })
     }
-  }, [token])
+  }, [logoutMessage])
 
   const logoutUser = () => {
     logout();
