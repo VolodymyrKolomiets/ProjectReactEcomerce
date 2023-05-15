@@ -1,6 +1,7 @@
 @import "../../index.scss";
 
 header {
+  background: $backgroun-color-header;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -9,29 +10,28 @@ header {
 }
 
 .nav-container {
-  background: $backgroun-color-header;
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100vw;
 
-  .div-navbar{
-    background: $backgroun-color-header;
-  }
-
   div {
     display: flex;
-    gap: 10px;
+    gap: 15px;
   }
 
   a {
     all: unset;
     cursor: pointer;
-    border-radius: 8px;
   }
 
   a:hover {
-    transform: scale(1.1);
-    background-color:$hoover-btn-color;
+    transform: scale(1.2);
   }
+}
+
+.img-logo {
+  margin: 12px;
+  transform: rotate(-15deg);
+
 }

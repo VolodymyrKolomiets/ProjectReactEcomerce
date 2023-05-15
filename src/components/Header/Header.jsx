@@ -5,6 +5,7 @@ import { UserContext } from '../../context/UserContext/UserState';
 import { Avatar, notification, Badge } from "antd";
 import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { ProductContext } from '../../context/ProductContex/ProductState';
+import logo from '../../img/logo.png'
 
 
 function Header() {
@@ -37,25 +38,27 @@ function Header() {
     <>
       <header>
         <div className='nav-container'>
-          <h3>Header</h3>
+        <img src={logo} alt="images" className='img-logo' style={{ width: '110px', height: '50px' }}/>
           <nav>
 
             {token ? (<div className='div-navbar'>
+              <Link to="/">Home</Link>
               <Link to="/profile"> <Avatar icon={<UserOutlined />} /></Link>
               <Link to="/products">Product</Link>
               <Link to="/cart">
                 <Badge count={cart.length}>
-                <ShoppingCartOutlined />
-              </Badge>
+                  <ShoppingCartOutlined />
+                </Badge>
               </Link>
-              <Link to="/">Home</Link>
               <span onClick={logoutUser}><Link to="/">Logout</Link></span>
             </div>
             ) : (
               <>
+              <div className='div-navbar'>
                 <Link to="/">Home</Link>
                 <Link to="/register">Register</Link>
                 <Link to="/login">Login</Link>
+                </div>
               </>)}
 
             {/* {token ? (<>(<Link to="/profile"> <Avatar icon={<UserOutlined />} /></Link> ):(<Link to="/register">Register</Link>)</>) */}

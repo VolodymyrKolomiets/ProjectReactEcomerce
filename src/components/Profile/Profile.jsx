@@ -15,6 +15,7 @@ const Profile = () => {
     return   <Spin size="large" />
   }
   return <div className="profile-container">
+    <div>
     <Card
       title="Profile"
       extra={<a href="#">{user.role}</a>}
@@ -29,12 +30,20 @@ const Profile = () => {
       <p>Surname: {user.surname}</p>
       <p>Email: {user.email}</p>
     </Card>
+    </div>
+    <div>
     <h3>Orders</h3>
-    <Collapse defaultActiveKey={['1']} >
+    {user.Orders.map(order => { 
+      return (
+        <Collapse defaultActiveKey={['1']} >
       <Panel header="This is panel header 1" key="1">
-        <p>{}</p>
+        <p>{order.Products.map(product => product.name)}</p>
       </Panel>
     </Collapse>
+      )
+    })}
+    
+    </div>
   </div>;
 };
 

@@ -1,0 +1,9 @@
+.card-wrapper { max-width: 600px; margin: 0 auto; }
+
+@media screen and (max-width: 768px) { .ant-form-item-control-input { max-width: 100%; } }
+
+@media screen and (max-width: 576px) { .ant-form-inline .ant-form-item { margin-bottom: 16px; } }
+
+.login-container{
+    height: 86%;
+}

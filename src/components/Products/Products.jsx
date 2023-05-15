@@ -17,7 +17,7 @@ const {getAllProducts, products, addCart} =useContext(ProductContext)
                 <div>
                     <h4>{product.name}</h4>
                     <p>{product.description}</p>
-                    <span>{product.price} €</span>
+                    <span>{product.price} €  </span>
                     <span>{product.Category.category}</span>
                 </div>
                     <button className='add-btn' onClick={()=>addCart(product)}>Add</button>

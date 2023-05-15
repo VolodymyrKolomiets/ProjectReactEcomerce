@@ -1,9 +1,10 @@
 $font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 $font-color:rgba(17, 18, 18, 0.87);
 $backgroun-color-principal:#f7f0f0;
-$backgroun-color-header:#d6d3be;
-$btn-color: #4accda;
-$hoover-btn-color:#8da79d;
+$backgroun-color-header:linear-gradient(to right, transparent, mistyrose),
+url("critters.png");
+$btn-color: rgba(255, 228, 225, 0.468);
+$hoover-btn-color: antiquewhite;
 $border-btn: solid 1px black;
 
 
@@ -21,4 +22,8 @@ $border-btn: solid 1px black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* -webkit-text-size-adjust: 100%; */
+}
+
+body{
+  margin: 0;
 }

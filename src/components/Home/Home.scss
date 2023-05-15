@@ -1,25 +1,70 @@
 @import "../../index.scss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
-// div{
-//     background-color: $backgroun-color-principal;
-// }
 
-section{
+.home-container { max-width: 1200px; margin: 0 auto; }
+
+@media only screen and (max-width: 768px) { .home-container { flex-direction: column; align-items: center; } section { margin-bottom: 50px; } img { width: 100%; height: auto; } }
+
+ .home-title{
+    font-family: 'Dancing Script', cursive;
+}
+
+section {
     display: flex;
-    margin-top: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  section img {
+    max-width: 50%;
+  }
+  
+  section p {
+    margin: 0 60px 0 60px;
+    font-family: 'Dancing Script', cursive;
+    max-width: 45%;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    section {
+      flex-direction: column;
+      align-items: center;
+    }
+    section img {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    section p {
+        margin: 0 30px 0 30px;
+        font-family: 'Dancing Script', cursive;
+      max-width: 100%;
+    }
+  }
 
-}
-
-.first-section{
+/* .first-section{
     background-color: antiquewhite;
-}
+} */
 .second-section{
-    background-color: beige;
+    background-color: mistyrose;
+    transition: background-color 2s;
 }
-.theerd-section{
+
+.second-section:hover {
+    background-color: antiquewhite;
+  }
+/* .theerd-section{
     background-color:  aliceblue;
-}
+} */
+
 .fourth-section{
-    margin-bottom: 10px;
-    background-color: cornsilk;
+    margin-bottom: 20px;
+    background-color: antiquewhite;
+    transition: background-color 2s;
 }
+
+.fourth-section:hover {
+    background-color: mistyrose;
+  }

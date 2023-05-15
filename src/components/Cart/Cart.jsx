@@ -27,7 +27,7 @@ const Cart = () => {
   return (
     <div className='cart-container'>{cart.map(product => {
       return (
-        <div key={product.id} className='cart-container-product'>
+        <div  className='cart-container-product'>
           <p>{product.name}</p>
           <p>{product.price} €</p>
         </div>

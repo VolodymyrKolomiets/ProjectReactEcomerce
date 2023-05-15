@@ -1,64 +1,97 @@
-.container-form{
+.principal-register-container{
+    height: 87%;
+}
+
+.container-form {
     display: flex;
     justify-content: center;
     margin: 10px;
-}
-
-.form-container {
+  }
+  
+  .form-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 50%;
-    background-color: #d3e2e7;
+    background: linear-gradient(pink, 10%, mistyrose);;
     border-radius: 10px;
-    -webkit-box-shadow: 13px 10px 5px 0px rgb(134, 197, 232);
-    -moz-box-shadow: 13px 10px 5px 0px rgb(84, 164, 201);
-    box-shadow: 13px 10px 5px 0px rgba(101, 179, 218, 0.948);
-}
-
-.flex-container {
+    box-shadow: 13px 10px 5px 0px rgba(89, 153, 199, 0.948);
+  }
+  
+  .flex-container {
     display: flex;
     justify-content: center;
     margin: 10px;
-}
-
-input {
+  }
+  
+  input {
     all: unset;
     border: 1px dotted #2e34e1;
-}
-.submit-btn {
+  }
+  
+  .submit-btn {
     background-color: #007bff;
-    border-radius: 6px; 
-    color: #fff; 
-    padding: 10px 20px; 
-    border: none; 
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; 
+    border-radius: 6px;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
   
   .submit-btn:hover {
-    transform: scale(1.1); 
-    background-color: #0062cc; 
+    transform: scale(1.1);
+    background-color: #0062cc;
   }
-
-form {
+  
+  form {
     display: flex;
     flex-direction: column;
     width: 50%;
     gap: 5px;
     margin: 10px;
-}
-
-.alert-message {
+  }
+  
+  .alert-message {
     color: rgb(219, 22, 22);
     background-color: rgba(16, 15, 15, 0.695);
     border-radius: 8px;
-}
-
-.text-form {
+  }
+  
+  .text-form {
     color: #007bff;
-}
-
-.input-container {
+  }
+  
+  .input-container {
     color: #0062cc;
-}
+  }
+  
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+    }
+  
+    form {
+      width: 90%;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .form-container {
+      width: 70%;
+    }
+  
+    form {
+      width: 70%;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .form-container {
+      width: 50%;
+    }
+  
+    form {
+      width: 50%;
+    }
+  }
