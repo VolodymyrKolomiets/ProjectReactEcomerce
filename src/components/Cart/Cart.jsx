@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { ProductContext } from '../../context/ProductContex/ProductState'
 import { Empty, notification } from 'antd'
-import { OrdersContext } from '../../context/OrderContext/Orderstate'
 import './Cart.scss'
+import { OrdersContext } from '../../context/OrderContext/OrderState'
 
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductContext)

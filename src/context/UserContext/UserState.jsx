@@ -4,11 +4,10 @@ import UserReducer from "./UserReducer";
 
 
 const token = JSON.parse(localStorage.getItem("token"));
-const user = JSON.parse(localStorage.getItem("user"));
 
 const initialState = {
     token: token ? token : null,
-    user: user ? user : null,
+    user: null,
     message:"",
     logoutmessage:""
 };
@@ -26,11 +25,9 @@ export const UserProvider = ({ children }) => {
             type: "LOGIN",
             payload: res.data,
         });
-        console.log(res.data.user)
 
         if (res.data) {
             localStorage.setItem("token", JSON.stringify(res.data.token));
-            localStorage.setItem("user", JSON.stringify(res.data.user));
         }
     };
     const register = async () => {
@@ -45,22 +42,19 @@ export const UserProvider = ({ children }) => {
         }
     };
     
-    const getUserInfo= async(id)=>{
+    const getUserInfo= async()=>{
       const token = JSON.parse(localStorage.getItem("token"))
-      console.log(token)
-      const res = await axios.get(`${API_URL}/users/getUserInfoById/${id}`,{
+      const res = await axios.get(`${API_URL}/users/getUserInfoById`,{
           headers:{
               Authorization:token
           }
       })
-      console.log("resultado ", res.data)
       dispatch({
           type:"GET_USER_INFO",
           payload:res.data
       })
       return res
     };
-
     const logout = async () => {
       const token = JSON.parse(localStorage.getItem("token"));
       const res = await axios.delete(API_URL + "/users/logout",  
@@ -77,7 +71,6 @@ export const UserProvider = ({ children }) => {
         localStorage.removeItem("token");
       }
     };
-
     return (
         <UserContext.Provider
           value={{

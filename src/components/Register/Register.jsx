@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Register.scss";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/UserContext/UserState";
 
 const Register = () => {
   const initialValue = {
     name: "",
-    lastName: "",
+    surname: "",
     email: "",
     password: "",
   };
   const [data, setData] = useState(initialValue);
   const [btnDisabled, setBtnDisabled] = useState(true);
-    const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("");
+  const { register } = useContext(UserContext)
 
-
- const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     if (
       data.name.length + 1 < 3 ||
-      data.lastName.length + 1 < 3 ||
+      data.surname.length + 1 < 3 ||
       data.password.length === 0
     ) {
       setMessage("Name, Last Name, and password are required");
@@ -33,32 +34,9 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const userInfo = {
-      name: data.name,
-      lastName: data.lastName,
-      email: data.email,
-      password: data.password,
-    };
-    let userList = [];
-    try {
-      const existingUsers = localStorage.getItem("userList");
-      if (existingUsers) {
-        userList = JSON.parse(existingUsers);
-      }
-    } catch (error) {
-      console.log("Error loading user list from local storage:", error);
-    }
-  
-    // Verificar si el usuario ya existe en la lista
-    const existingUser = userList.find(user => user.email === userInfo.email);
-    if (existingUser) {
-      alert('Este usuario ya existe en la lista');
-      return;
-    }
-  
-    userList.push(userInfo);
-    localStorage.setItem("userList", JSON.stringify(userList));
-    console.log(`Welcome ${data.name} ${data.lastName}!`);
+
+    register(data)
+    // limpia formulario
     setData(initialValue);
     navigate("/");
   }
@@ -79,13 +57,13 @@ const Register = () => {
             />
           </div>
           <div className="input-container">
-            <label htmlFor="lastName">Last Name</label>
+            <label htmlFor="surname">Last Name</label>
             <input
               type="text"
               placeholder="Enter your last name"
               onChange={handleInputChange}
-              name="lastName"
-              value={data.lastName}
+              name="surname"
+              value={data.surname}
             />
           </div>
           <div className="input-container">
@@ -101,7 +79,7 @@ const Register = () => {
           <div className="input-container">
             <label htmlFor="birthdate">Password</label>
             <input
-              type="text"
+              type="password"
               onChange={handleInputChange}
               name="password"
               value={data.password}

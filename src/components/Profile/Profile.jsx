@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { Card, Spin, Collapse } from "antd";
+import "./Profile.scss"
 
 const Profile = () => {
   const { Panel } = Collapse
@@ -13,7 +14,7 @@ const Profile = () => {
   if(!user){
     return   <Spin size="large" />
   }
-  return <div>
+  return <div className="profile-container">
     <Card
       title="Profile"
       extra={<a href="#">{user.role}</a>}

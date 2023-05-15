@@ -7,7 +7,7 @@ import Login from './components/Login/Login'
 import Products from './components/Products/Products'
 import Profile from './components/Profile/Profile'
 import Register from './components/Register/Register'
-import { OrdersProvider } from './context/OrderContext/Orderstate'
+import { OrdersProvider } from './context/OrderContext/OrderState'
 import { ProductProvider } from './context/ProductContex/ProductState'
 import { UserProvider } from './context/UserContext/UserState'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
