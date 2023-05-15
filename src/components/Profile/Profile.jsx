@@ -5,12 +5,12 @@ import "./Profile.scss"
 
 const Profile = () => {
   const { Panel } = Collapse
-  const { user } = useContext(UserContext);
+  const {getUserInfo, user } = useContext(UserContext);
  
-  console.log(user)
-  
+  useEffect(() => {
+    getUserInfo();
+  }, []);
 
-  
   if(!user){
     return   <Spin size="large" />
   }
