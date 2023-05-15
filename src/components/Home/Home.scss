@@ -1,5 +1,25 @@
 @import "../../index.scss";
 
-div{
-    background-color: $backgroun-color-principal;
+// div{
+//     background-color: $backgroun-color-principal;
+// }
+
+section{
+    display: flex;
+    margin-top: 10px;
+
+}
+
+.first-section{
+    background-color: antiquewhite;
+}
+.second-section{
+    background-color: beige;
+}
+.theerd-section{
+    background-color:  aliceblue;
+}
+.fourth-section{
+    margin-bottom: 10px;
+    background-color: cornsilk;
 }

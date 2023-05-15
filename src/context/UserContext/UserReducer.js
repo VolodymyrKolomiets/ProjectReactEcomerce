@@ -11,12 +11,9 @@ const users = (state, action) => {
         ...state,
         token: action.payload.token,
         message: action.payload.message,
+        user: action.payload.user
       };
-    case "GET_USER_INFO":
-      return {
-        ...state,
-        user: action.payload
-      };
+  
     case "LOGOUT":
       return {
         ...state,

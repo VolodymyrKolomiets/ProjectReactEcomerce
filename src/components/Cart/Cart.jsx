@@ -19,14 +19,15 @@ const Cart = () => {
   }
 
   if (cart.length < 1) {
-    return <Empty description={
+    return <div className='container-cart'><Empty description={
       <span>No products</span>
-    } />
+    } /></div>
   }
+
   return (
     <div className='cart-container'>{cart.map(product => {
       return (
-        <div className='cart-container-product'>
+        <div key={product.id} className='cart-container-product'>
           <p>{product.name}</p>
           <p>{product.price} €</p>
         </div>

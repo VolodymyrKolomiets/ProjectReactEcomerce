@@ -4,10 +4,12 @@ import { Card, Spin, Collapse } from "antd";
 
 const Profile = () => {
   const { Panel } = Collapse
-  const { getUserInfo,user } = useContext(UserContext);
-  useEffect(() => {
-    getUserInfo();
-  }, []);
+  const { user } = useContext(UserContext);
+ 
+  console.log(user)
+  
+
+  
   if(!user){
     return   <Spin size="large" />
   }
