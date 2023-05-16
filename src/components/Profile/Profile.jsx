@@ -33,7 +33,7 @@ const Profile = () => {
     </div>
     <div>
     <h3>Orders</h3>
-    {user.Orders.map(order => { 
+    {user.Orders?.map(order => { 
       return (
         <Collapse defaultActiveKey={['1']} >
       <Panel header="This is panel header 1" key="1">
