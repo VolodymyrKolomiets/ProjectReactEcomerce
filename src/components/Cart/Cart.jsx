@@ -3,7 +3,7 @@ import { ProductContext } from '../../context/ProductContex/ProductState'
 import { Empty, notification } from 'antd'
 import './Cart.scss'
 import { OrdersContext } from '../../context/OrderContext/OrderState'
-
+import { Card } from 'antd';
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductContext)
   const { createOrder } = useContext(OrdersContext)
@@ -25,13 +25,14 @@ const Cart = () => {
   }
 
   return (
-    <div className='cart-container'>{cart.map(product => {
+    <div className='cart-container'>{cart.map((product,i) => {
       return (
-        <div  className='cart-container-product'>
+        <div key={i} className='cart-container-product'>
           <p>{product.name}</p>
           <p>{product.price} €</p>
         </div>
       )
+   
     })}
       <div className='btn-div'>
       <button className='cart-btn' onClick={() => clearCart()}>Clear cart</button>

@@ -5,24 +5,23 @@
     cursor: pointer;
     border-radius: 8px;
     background-color: $btn-color;
-    border: $border-btn
-}
-
-.cart-btn:hover {
-    transform: scale(1.1);
-    background-color: $hoover-btn-color;
+    border: $border-btn;
+    margin: 10px;
 }
 
 .btn-div {
     display: flex;
     justify-content: space-around;
 }
+.cart-btn:hover {
+    transform: scale(1.2);
+}
+
 
 .cart-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap-reverse;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -37,4 +36,8 @@
 
 .container-cart{
     min-height: 80vh;
+}
+
+.ant-collapse-content-box{
+    flex-direction: column;
 }
