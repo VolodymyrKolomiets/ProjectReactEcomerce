@@ -11,7 +11,6 @@ export const OrdersProvider = ({ children }) => {
     const createOrder = async (cart) => {
         const token = JSON.parse(localStorage.getItem("token"));
         const productIds = cart.map((product) => {return (product.id) })
-        console.log(productIds)
         try {
             await axios.post(API_URL + "/orders/createOrder", { ProductId: productIds },
                 {

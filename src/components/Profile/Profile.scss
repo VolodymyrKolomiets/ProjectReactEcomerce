@@ -6,6 +6,7 @@
 
 .card-container{
     margin-top: 48px;
+    margin-right: 10px;
 }
 
 
@@ -13,4 +14,22 @@
 .ant-collapse-content-box{
     flex-direction: column;
 
+}
+
+.ant-collapse-item {
+    margin-left:16px;
+}
+
+.ant-collapse {
+    margin-left: 32px;
+}
+
+.profile-icon{
+    width: 64px;
+    height: 64px;
+}
+
+.icon-profil-no-orders{
+    height: 64px;
+    width: 64px;
 }

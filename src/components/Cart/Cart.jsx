@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import { ProductContext } from '../../context/ProductContex/ProductState'
-import { Empty, notification } from 'antd'
+import { notification, Button, Space } from 'antd'
 import './Cart.scss'
 import { OrdersContext } from '../../context/OrderContext/OrderState'
 import { useNavigate } from "react-router-dom";
+import { FaCartPlus } from "react-icons/fa"
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
@@ -13,19 +15,20 @@ const Cart = () => {
 
   const orderFinish = () => {
     createOrder(cart)
-    navigate("/profile");
     setTimeout(() => {
+      navigate("/profile");
       clearCart()
-    }, 1000)
+    }, 1500)
     notification.success({
       message: 'Order created'
     })
   }
 
   if (cart.length < 1) {
-    return <div className='container-cart'><Empty description={
-      <h3>Empety</h3>
-    } /></div>
+    return <div className='container-cart'>
+      <h3> <FaCartPlus className='cart-icon' /> </h3>
+      <Link to="/products" className='cart-ref'>Show Products</Link>
+    </div>
   }
 
   return (
@@ -39,10 +42,10 @@ const Cart = () => {
    
     })}
       <div className='btn-div'>
-      <button className='cart-btn' onClick={() => clearCart()}>Clear cart</button>
-      <button className='cart-btn' onClick={() => orderFinish()}
-      >Create order
-      </button>
+      <Button  className='cart-btn' onClick={() => clearCart()}>Clear cart</Button>
+     
+      <Button  className='cart-btn' type="primary"  onClick={() => orderFinish()}>Create Order</Button>
+
       </div>
     </div>
   )

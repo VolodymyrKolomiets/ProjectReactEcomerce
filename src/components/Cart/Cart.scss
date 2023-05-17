@@ -1,19 +1,16 @@
 @import "../../index.scss";
 
 .cart-btn {
-    all: unset;
     cursor: pointer;
-    border-radius: 8px;
-    background-color: $btn-color;
-    border: $border-btn;
-    margin: 10px;
-    transition: 2s;
+  
+    margin: 16px 64px 16px 64px ;
 }
 
 .btn-div {
     display: flex;
     padding: 24px;
 }
+
 .cart-btn:hover {
     transform: scale(1.2);
 }
@@ -35,11 +32,24 @@
     margin-bottom: 10px;
 }
 
-.container-cart{
-    min-height: 80vh;
+.container-cart {
+    min-height: 70vh;
 }
 
-.ant-collapse-content-box{
+.ant-collapse-content-box {
     flex-direction: column;
 }
 
+.cart-icon {
+    height: 160px;
+    width: 100px;
+    margin-top: 48px;
+}
+
+.cart-ref {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+    font-size: x-large;
+
+}
