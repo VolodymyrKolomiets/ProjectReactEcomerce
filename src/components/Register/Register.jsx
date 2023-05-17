@@ -78,7 +78,7 @@ const Register = () => {
               />
             </div>
             <div className="input-container">
-              <label htmlFor="birthdate">Password</label>
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 onChange={handleInputChange}

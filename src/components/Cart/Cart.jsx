@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ProductContext } from '../../context/ProductContex/ProductState'
-import { notification, Button, Space } from 'antd'
+import { notification, Button } from 'antd'
 import './Cart.scss'
 import { OrdersContext } from '../../context/OrderContext/OrderState'
 import { useNavigate } from "react-router-dom";

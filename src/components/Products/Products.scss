@@ -1,14 +1,9 @@
 @import "../../index.scss";
 
 .add-btn {
-  all: unset;
   cursor: pointer;
-  border-radius: 6px;
-  padding: 2px 6px 2px 6px;
-  background-color: $btn-color;
-  border: $border-btn;
   margin: 6px;
-  transition: 2s;
+  transition: 1s;
 }
 
 .add-btn:hover {

@@ -1,10 +1,12 @@
 import React, { useContext, useEffect} from 'react'
 import { ProductContext } from '../../context/ProductContex/ProductState'
 import './Products.scss'
+import {  Button } from 'antd'
+
+
 const Products = () => {
 const {getAllProducts, products, addCart} =useContext(ProductContext)
     
-
     useEffect(() => {
         getAllProducts()
     }, [])
@@ -19,7 +21,8 @@ const {getAllProducts, products, addCart} =useContext(ProductContext)
                     <span>{product.price} €  </span>
                     <span>{product.Category.category}</span>
                 </div>
-                    <button className='add-btn' onClick={()=>addCart(product)}>Add to Cart</button>
+                    <Button type="primary" className='add-btn' onClick={() => addCart(product)}>Add to Cart</Button>
+
             </div>
         )
     })

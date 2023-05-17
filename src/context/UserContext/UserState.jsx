@@ -30,8 +30,9 @@ export const UserProvider = ({ children }) => {
             localStorage.setItem("token", JSON.stringify(res.data.token));
         }
     };
-    const register = async () => {
-        const res = await axios.post(API_URL + "/users/createUser");
+
+    const register = async (user) => {
+        const res = await axios.post(API_URL + "/users/createUser", user);
         dispatch({
             type: "REGISTER",
             payload: res.data,
