@@ -36,14 +36,14 @@ header {
 
 .img-logo {
   margin: 12px;
-  animation: rotate 2s infinite alternate;
+  animation: rotate 3s infinite alternate;
 }
 
 @keyframes rotate {
   0% {
-    transform: rotate(-10deg);
+    transform: rotate(-7deg);
   }
   100% {
-    transform: rotate(10deg);
+    transform: rotate(7deg);
   }
 }

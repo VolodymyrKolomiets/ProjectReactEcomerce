@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Button, Card, Form, Input, notification } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Login.scss'
 
 
@@ -91,6 +91,10 @@ const Login = () => {
                         </Form.Item>
                     </Form>
                 </Card>
+                <div>
+                    <h3>Si no estas registrado</h3>
+                    <Link to="/register">Register</Link>
+                </div>
             </div>
         </div>
     )

@@ -42,7 +42,6 @@ const Profile = () => {
           </Collapse>
         )
       })}
-
     </div>
   </div>;
 };
