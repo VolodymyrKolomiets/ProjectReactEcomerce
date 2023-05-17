@@ -3,13 +3,17 @@ import { ProductContext } from '../../context/ProductContex/ProductState'
 import { Empty, notification } from 'antd'
 import './Cart.scss'
 import { OrdersContext } from '../../context/OrderContext/OrderState'
-import { Card } from 'antd';
+import { useNavigate } from "react-router-dom";
+
+
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductContext)
   const { createOrder } = useContext(OrdersContext)
+  const navigate = useNavigate();
 
   const orderFinish = () => {
     createOrder(cart)
+    navigate("/profile");
     setTimeout(() => {
       clearCart()
     }, 1000)
@@ -20,7 +24,7 @@ const Cart = () => {
 
   if (cart.length < 1) {
     return <div className='container-cart'><Empty description={
-      <span>No products</span>
+      <h3>Empety</h3>
     } /></div>
   }
 

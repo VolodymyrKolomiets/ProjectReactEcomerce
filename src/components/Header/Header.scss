@@ -23,10 +23,14 @@ header {
   a {
     all: unset;
     cursor: pointer;
+    transition: 1s;
   }
 
   a:hover {
     transform: scale(1.2);
+  }
+  a:not(:hover) {
+    transform: scale(1);
   }
 }
 

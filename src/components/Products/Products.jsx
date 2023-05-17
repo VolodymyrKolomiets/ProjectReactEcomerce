@@ -12,14 +12,14 @@ const {getAllProducts, products, addCart} =useContext(ProductContext)
     const productsInfo = products.map((product) => {
         return (
             <div key={product.id} className="product">
-                <img src={`http://localhost:8080/${product.images}`} alt="imagen" />
+                <img src={`http://localhost:8080/${product.images}`} alt="imagen" className="product-images" />
                 <div>
                     <h4>{product.name}</h4>
                     <p>{product.description}</p>
                     <span>{product.price} €  </span>
                     <span>{product.Category.category}</span>
                 </div>
-                    <button className='add-btn' onClick={()=>addCart(product)}>Add</button>
+                    <button className='add-btn' onClick={()=>addCart(product)}>Add to Cart</button>
             </div>
         )
     })

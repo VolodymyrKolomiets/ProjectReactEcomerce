@@ -7,11 +7,12 @@
     background-color: $btn-color;
     border: $border-btn;
     margin: 10px;
+    transition: 2s;
 }
 
 .btn-div {
     display: flex;
-    justify-content: space-around;
+    padding: 24px;
 }
 .cart-btn:hover {
     transform: scale(1.2);
@@ -41,3 +42,4 @@
 .ant-collapse-content-box{
     flex-direction: column;
 }
+

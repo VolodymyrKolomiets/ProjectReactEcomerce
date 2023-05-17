@@ -13,7 +13,7 @@ const Home = () => {
 
         <section className='first-section'>
           <img src={pragueImg} alt="images" style={{ width: '500px', height: '300px' }} />
-          <p>Bienvenido/a a nuestra tienda en línea dedicada a la venta de libros. Aquí podrás encontrar una amplia selección de títulos en diferentes géneros y formatos, desde bestsellers hasta joyas literarias poco conocidas. Si eres un apasionado de la literatura, este es el lugar perfecto para ti.
+          <p>Bienvenido@ a nuestra tienda en línea dedicada a la venta de libros. Aquí podrás encontrar una amplia selección de títulos en diferentes géneros y formatos, desde bestsellers hasta joyas literarias poco conocidas. Si eres un apasionado de la literatura, este es el lugar perfecto para ti.
           </p>
         </section>
 
